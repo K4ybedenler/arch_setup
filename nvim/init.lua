@@ -1,0 +1,2 @@
+require("kay")
+print("mfk")
