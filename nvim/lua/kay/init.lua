@@ -1,2 +1,2 @@
 require("kay.remap")
-print("hi from the kay")
+require("kay.set")

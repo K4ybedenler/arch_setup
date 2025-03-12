@@ -1,2 +1,1 @@
 require("kay")
-print("mfk")
