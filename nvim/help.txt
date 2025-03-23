@@ -1,0 +1,46 @@
+global variable:
+leader      = " "
+localleader = "\\"
+
+key bindings:
+leader + pv -> close opened file
+leader + h  -> go to the left window 
+leader + j  -> go to the lower window 
+leader + k  -> go to the upper window 
+leader + l  -> go to the right window 
+ctrl + h    -> open current help-file
+
+neo-tree:
+enter -> open the file
+s     -> open file on the right of the most-right code window
+
+fugitive:
+leader + gs -> info about current branch
+
+harpoon:
+leader + a -> add file to harpoon
+ctrl + e   -> open harpoon ui
+ctrl + 1   -> open 1 file 
+ctrl + 2   -> open 2 file 
+ctrl + 3   -> open 3 file 
+ctrl + 4   -> open 4 file
+
+lsp:
+Up   -> previous item in suggestion list
+Down -> next item in suggestion list
+Tab  -> autocomlete current item from list
+ctrl + y -> idk 
+ctrl + e -> idk 
+ctrl + p -> idk 
+
+telescope:
+leader + pf -> open file searcher in the current project
+leader + ps -> search string in whole the project
+ctrl + p    -> search in the current git repo
+
+udotree:
+leader + u -> tree of changes
+
+tips:
+1. [arch|wayland] for using system clipboard have to install wl-clipboard
+
