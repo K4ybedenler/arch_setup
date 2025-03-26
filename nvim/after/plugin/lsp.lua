@@ -5,8 +5,6 @@ lsp.capabilities = vim.tbl_deep_extend(
   require('cmp_nvim_lsp').default_capabilities()
 )
 
--- This is where you enable features that only work
--- if there is a language server active in the file
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
   callback = function(event)
@@ -24,28 +22,23 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
   end,
 })
---
---lsp.on_attach(function(client, bufnr)
---  -- see :help lsp-zero-keybindings
---  -- to learn the available actions
---  lsp.default_keymaps({buffer = bufnr})
---end)
---
+
 require('mason').setup({})
 require('mason-lspconfig').setup({
+    ensure_installed = {
+        'cmake',
+        'marksman',
+        'yamlls',
+        'lua_ls',
+        'clangd',
+    },
     handlers = {
         function(server_name)
             require('lspconfig')[server_name].setup({})
         end,
     },
---    ensure_installed = {
---        'yamlls',
---        'lua_ls',
---        'clangd',
---    },
 })
---require('luasnip.loaders.from_vscode').lazy_load()
---
+
 local cmp = require('cmp')
 
 cmp.setup({
@@ -82,7 +75,4 @@ cmp.setup({
       require('luasnip').lsp_expand(args.body)
     end,
   },
---  formatting = cmp_format,
 })
---
---lsp.setup()

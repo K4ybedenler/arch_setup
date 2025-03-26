@@ -27,6 +27,8 @@ require("lazy").setup({
     {'hrsh7th/nvim-cmp'},
     {'hrsh7th/cmp-buffer'},
     {'hrsh7th/cmp-nvim-lsp'},
+    {'L3MON4D3/LuaSnip'},
+    {'rafamadriz/friendly-snippets'},
     {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.3',
@@ -46,14 +48,6 @@ require("lazy").setup({
         build = ":TSUpdate"
     },
     {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v3.x',
-        requires = {
-            {'L3MON4D3/LuaSnip'},
-            {'rafamadriz/friendly-snippets'},
-        }
-    },
-    {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
         dependencies = {
@@ -64,7 +58,6 @@ require("lazy").setup({
       },
     },
 
-  -- automatically check for plugin updates
   checker = { enabled = true },
 })
 
