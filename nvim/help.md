@@ -18,6 +18,7 @@
 - leader + k  -> go to the upper window 
 - leader + l  -> go to the right window 
 - ctrl + h    -> open current help-file
+- ctrl + o    -> go to the previous window
 
 ### neo-tree:
 - enter -> open the file
