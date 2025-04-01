@@ -12,13 +12,16 @@
 - :LspLog     -> open current LSP server logs
 
 ### key bindings:
-- leader + pv -> close opened file
-- leader + h  -> go to the left window 
-- leader + j  -> go to the lower window 
-- leader + k  -> go to the upper window 
-- leader + l  -> go to the right window 
-- ctrl + h    -> open current help-file
-- ctrl + o    -> go to the previous window
+- leader + pv    -> close opened file
+- leader + h     -> go to the left window 
+- leader + j     -> go to the lower window 
+- leader + k     -> go to the upper window 
+- leader + l     -> go to the right window 
+- ctrl + h       -> open current help-file
+- ctrl + o       -> go to the previous window
+- ctrl + q       -> close current window
+- ctrl + alt + q -> close nvim
+- ctrl + alt + t -> open terminal
 
 ### neo-tree:
 - enter -> open the file
@@ -49,6 +52,7 @@
 - ctrl + y -> idk 
 - ctrl + e -> idk 
 - ctrl + p -> idk 
+- leader + gf -> format the file
 
 ### telescope:
 - leader + pf -> open file searcher in the current project

@@ -5,6 +5,7 @@ return {
         "williamboman/mason-lspconfig.nvim",
         "hrsh7th/nvim-cmp",
         "hrsh7th/cmp-nvim-lsp",
+        "windwp/nvim-autopairs",
     },
     config = function()
         local lsp = require("lspconfig").util.default_config
@@ -25,7 +26,7 @@ return {
                     ["gi"] = "implementation",
                     ["go"] = "type_definition",
                     ["gr"] = "references",
-                    ["gs"] = "signature_help",
+--                    ["gs"] = "signature_help",
                     ["<F2>"] = "rename",
                     ["<F3>"] = "format",
                     ["<F4>"] = "code_action",
@@ -34,6 +35,11 @@ return {
                     vim.keymap.set("n", key, "<cmd>lua vim.lsp.buf." .. action .. "()<cr>", opts)
                 end
             end,
+        })
+
+        require("nvim-autopairs").setup({
+            event = "InsertEnter",
+            config = true
         })
 
         require("mason").setup({})
@@ -48,11 +54,15 @@ return {
 
         local cmp = require("cmp")
         cmp.setup({
+            window = {
+                completion = cmp.config.window.bordered(),
+                documentation = cmp.config.window.bordered(),
+            },
             sources = {
                 { name = "nvim_lsp" },
             },
             mapping = {
-                ["<C-y>"] = cmp.mapping.confirm({ select = false }),
+                ["<C-leader>"] = cmp.mapping.confirm({ select = false }),
                 ["<C-e>"] = cmp.mapping.abort(),
                 ["<Up>"] = cmp.mapping.select_prev_item({ behavior = "select" }),
                 ["<Down>"] = cmp.mapping.select_next_item({ behavior = "select" }),
