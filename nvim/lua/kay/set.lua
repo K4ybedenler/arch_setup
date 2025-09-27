@@ -31,3 +31,23 @@ vim.opt.colorcolumn = "80"
 vim.g.mapleader = " "
 
 vim.opt.clipboard = "unnamedplus"
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "c", "cpp" },
+  callback = function()
+    vim.bo.cindent = false
+    vim.bo.smartindent = false
+    vim.bo.autoindent = false
+  end,
+})
+
+vim.api.nvim_create_autocmd("VimEnter", {
+    callback = function()
+        local file = vim.fn.expand("%:p")
+        if vim.fn.isdirectory(file) == 0 then
+            vim.cmd("cd " .. vim.fn.fnamemodify(file, ":h"))
+        else
+            vim.cmd("cd " .. file)
+        end
+    end,
+})

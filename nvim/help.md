@@ -37,6 +37,9 @@
 ### fugitive:
 - leader + gs -> info about current branch
 
+### gitsigns:
+- leader + gi -> open hunk
+
 ### harpoon:
 - leader + a -> add file to harpoon
 - ctrl + e   -> open harpoon ui
@@ -49,6 +52,7 @@
 - Up   -> previous item in suggestion list
 - Down -> next item in suggestion list
 - Tab  -> autocomlete current item from list
+- <leader>gd -> go to defenition
 - ctrl + y -> idk 
 - ctrl + e -> idk 
 - ctrl + p -> idk 
@@ -59,7 +63,7 @@
 - leader + ps -> search string in whole the project
 - ctrl + p    -> search in the current git repo
 
-### udotree:
+### undotree:
 - leader + u -> tree of changes
 
 ### vim:
@@ -96,6 +100,8 @@
 - ctrl + v -> start VISUAL BLOCK mode; I -> start writing in each VISUAL BLOCK
 - u -> revert previous changes
 - ctrl + r -> rever reverted changes
+- <leader>d -> diagnostics
+- ctrl + o -> go to previous(coursor position/page)
 
 ### tips:
 1. [arch|wayland] for using system clipboard have to install wl-clipboard
